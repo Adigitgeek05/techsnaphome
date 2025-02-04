@@ -19,7 +19,7 @@ export default function App() {
 
   return (
     <>
-      <div className="sticky top-0 h-screen grid place-items-center text-6xl text-center">
+      <div className="sticky top-0 h-screen grid place-items-center text-6xl text-center -z-10">
         scroll down
         <br />▾
       </div>

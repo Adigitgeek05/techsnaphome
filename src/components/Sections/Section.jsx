@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,9 +10,9 @@ const Section = () => {
   useEffect(() => {
     gsap.fromTo(
       sectionRef.current,
-      { borderRadius: "40px" }, // No border-radius initially
+      { borderRadius: "40px" }, 
       {
-        borderRadius: "40px 40px 0 0", // Rounded top corners
+        borderRadius: "40px 40px 0 0", 
         duration: 0.5,
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -26,7 +26,7 @@ const Section = () => {
   return (
     <div
       ref={sectionRef}
-      className="bg-blue-400 min-h-screen text-4xl text-white flex flex-col font-extrabold sticky top-0 z-[4] justify-center items-center transition-all duration-500"
+      className="bg-blue-400 min-h-screen text-4xl text-white flex flex-col font-extrabold  top-0 z-[4] justify-center items-center transition-all duration-500"
     >
       Courses
     </div>
