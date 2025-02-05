@@ -5,7 +5,7 @@ export default function Pg() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const cursorRef = useRef(null);
   const target = useRef(null);
-
+  
   useEffect(() => {
     const handleScroll = () => {
       const element = target.current;
