@@ -1,10 +1,16 @@
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect,useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Cursor from "../Cursor/Cursor.jsx"
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 const SideSlide = () => {
+  const cursorRef = useRef(null);
+  useEffect(() => {
+    gsap.set("#cursor", { scale: 1 });
+  });
   const component = useRef();
   const slider = useRef();
 
@@ -27,18 +33,18 @@ const SideSlide = () => {
   }, []);
 
   return (
-    <div className="sticky-top-0 min-h-screen overflow overflow-x-scroll" ref={component}>
+    <div className="sticky-top-0 z-[8] min-h-screen overflow overflow-x-scroll" ref={component}>
       <div ref={slider} className="sticky-top-0 flex w-[400vw]">
-        <div className="sticky-top-0 z-0 panel w-screen h-screen bg-blue-500 flex justify-center items-center text-white text-4xl">
+        <div className="sticky-top-0 z-0 panel w-screen h-screen bg-zinc-800 flex justify-center items-center text-white text-4xl">
           Course 1
         </div>
-        <div className="sticky-top-0 z-2 panel w-screen h-screen bg-blue-400 flex justify-center items-center text-white text-4xl">
+        <div className="sticky-top-0 z-2 panel w-screen h-screen bg-zinc-800 flex justify-center items-center text-white text-4xl">
           Course 2
         </div>
-        <div className="sticky-top-0 z-4 panel w-screen h-screen bg-blue-300 flex justify-center items-center text-white text-4xl">
+        <div className="sticky-top-0 z-4 panel w-screen h-screen bg-zinc-800 flex justify-center items-center text-white text-4xl">
           Course 3
         </div>
-        <div className="panel w-screen h-screen bg-blue-200 flex justify-center items-center text-white text-4xl">
+        <div className="panel w-screen h-screen bg-zinc-800 flex justify-center items-center text-white text-4xl">
           Course 4
         </div>
       </div>

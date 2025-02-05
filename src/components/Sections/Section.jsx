@@ -1,12 +1,17 @@
 import  { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Cursor from "../Cursor/Cursor";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Section = () => {
   const sectionRef = useRef(null);
-
+  const cursorRef =useRef(null);
+  useEffect(()=> {
+    gsap.set("#cursor", {scale: 1});
+  })
+ 
   useEffect(() => {
     gsap.fromTo(
       sectionRef.current,
@@ -26,8 +31,8 @@ const Section = () => {
   return (
     <div
       ref={sectionRef}
-      className="bg-blue-400 min-h-screen text-4xl text-white flex flex-col font-extrabold  top-0 z-[4] justify-center items-center transition-all duration-500"
-    >
+      className="bg-zinc-900 min-h-screen text-4xl text-white flex flex-col font-extrabold  top-0 z-[4] justify-center items-center transition-all duration-500"
+      >
       Courses
     </div>
   );

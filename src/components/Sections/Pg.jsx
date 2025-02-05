@@ -1,21 +1,36 @@
-import { useRef } from "react";
-import { useScroll, motion, useTransform } from "framer-motion";
+import {useRef, react, useEffect,useState} from  'react';
 
-const quotes = [
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-  "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
-  "In one stroke, he bloodied both sides - set the American and Mexican governments against the Cartel, and cut off the supply of methamphetamine to the southwest. If this man had his own source of product on this side of the border, he would have the market to himself. The rewards would be... enormous. "
-];
 
-const CARD_COUNT = 4;
-
-export default function App() {
+export default function Pg() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const cursorRef = useRef(null);
   const target = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target,
-    offset: ["start 20%", "end 120%"]
-  });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = target.current;
+      if (!element) return;
+
+      const rect = element.getBoundingClientRect();
+      const scrollPercent = Math.max(
+        0,
+        Math.min(1, -rect.top / (rect.height - window.innerHeight)),
+      );
+      setScrollProgress(scrollPercent);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const quotes = [
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages",
+    "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia",
+    "In one stroke, he bloodied both sides - set the American and Mexican governments against the Cartel, and cut off the supply of methamphetamine to the southwest. If this man had his own source of product on this side of the border",
+  ];
+
+  const CARD_COUNT = 4;
 
   return (
     <>
@@ -25,17 +40,38 @@ export default function App() {
       </div>
       <div
         ref={target}
-        className="h-[500vh] mx-auto bg-blue-500 flow-root relative "
+        className="h-[500vh] mx-auto bg-zinc-900 flow-root relative"
       >
         <div className="sticky top-0 flow-root">
-          <div className="h-[100vh] relative flex justify-center items-center">
+          <div className="absolute top-1/2 left-[5%] -translate-y-1/2 h-[60vh] flex flex-col items-center">
+            <div className="relative h-full w-[2px] bg-gray-200">
+              <div
+                className="w-full bg-blue-500 origin-top transition-transform duration-100"
+                style={{
+                  transform: `scaleY(${scrollProgress})`,
+                  height: "100%",
+                }}
+              />
+              {[0, 33, 66, 100].map((position) => (
+                <div
+                  key={position}
+                  className={`absolute w-3 h-3 rounded-full -left-[5px] transform -translate-x-[0%] transition-colors duration-200
+                    ${scrollProgress >= position / 100 ? "bg-blue-500" : "bg-gray-200"}`}
+                  style={{
+                    top: `${position}%`,
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="h-[100vh] relative flex justify-center items-center pl-[10%]">
             <h1 className="top-[10%] absolute text-2xl md:text-4xl text-white font-bold text-center w-[20ch]">
               You probably haven't heard of them tattooed glossier leggings
             </h1>
             {[...Array(CARD_COUNT).keys()].map((_, idx, arr) => (
               <Box
                 key={idx}
-                scrollYProgress={scrollYProgress}
+                scrollProgress={scrollProgress}
                 index={idx}
                 length={arr.length}
                 start={(1 / arr.length) * idx}
@@ -58,35 +94,38 @@ export default function App() {
           </div>
         </div>
       </div>
-      <div className="min-w-screen sticky top-0 h-screen grid place-items-center text-6xl text-center">
-
-      </div>
+      <div className="min-w-screen sticky top-0 h-screen grid place-items-center text-6xl text-center" />
     </>
   );
 }
+
 function Box({
   children,
   end,
   index,
   length,
   scaleFac,
-  scrollYProgress,
-  start
+  scrollProgress,
+  start,
 }) {
-  const transform = `${40 * (-1 + (1 / (length - 1)) * index + 1)}%`; // 40 is a magic number that works for the height of the boxes. Dynamic heights need refinement
-  const translate = useTransform(
-    scrollYProgress,
-    [start, end],
-    ["200%", transform]
+  const transform = `${40 * (-1 + (1 / (length - 1)) * index + 1)}%`;
+  const progress = Math.min(
+    1,
+    Math.max(0, (scrollProgress - start) / (end - start)),
   );
-  const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
- 
+
   return (
-    <motion.div
-      style={{ y: translate, originY: 0.5, opacity }}
-      className="absolute"
+    <div
+      style={{
+        transform: `translateY(${200 - (200 - parseFloat(transform)) * progress}%)`,
+        opacity: progress,
+        transformOrigin: "50% 50%",
+      }}
+      className="absolute transition-all duration-100"
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
+
+
