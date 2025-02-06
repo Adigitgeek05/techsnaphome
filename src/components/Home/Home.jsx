@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Cursor from "../Cursor/Cursor.jsx";
 import Header from "../Header/Header.jsx";
 import { BackgroundLines } from "../ui/backgroun-lines.jsx";
-
+import vitelogo from '/background.svg'
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -76,7 +76,7 @@ export default function Home() {
             Fast, responsive, and SEO-optimized web solutions for your business.
           </p>
           <div className="w-[800px] h-[300px] overflow-hidden flex justify-center items-center">
-          <img src="//public/background.svg" alt="Background Image" />
+          <img src={vitelogo} alt="Background Image" />
           </div>
           
         </BackgroundLines>

@@ -1,5 +1,6 @@
 import {react,useState , useEffect} from 'react'
 import { gsap } from "gsap";
+import techsnaplo from '/techsnaplogo.png';
 
 export default function Header() {
     const [scrolling, setScrolling] = useState(false);
@@ -28,7 +29,7 @@ export default function Header() {
     return (
       <header className="dark:bg-black px-6 py-4 flex items-center space-x-11 justify-between">
         <div className="flex items-center">
-          <img src="//public/techsnaplogo.png" alt="Company logo" className="h-8" />
+          <img src={techsnaplo} alt="Company logo" className="h-8" />
         </div>
   
         <nav className="hidden md:flex items-center space-x-11">
