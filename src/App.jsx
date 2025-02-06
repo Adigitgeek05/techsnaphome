@@ -5,6 +5,7 @@ import Section from './components/Sections/Section.jsx'
 import Pg from './components/Sections/Pg.jsx'
 import SideSlide from './components/Sections/SideSlide.jsx'
 import Timeline from './components/Sections/Timeline.tsx'
+import Footer from './components/Footer/Footer.jsx'
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
       <Timeline />
       <Section />
       <SideSlide />
+      <Footer />
+
     </div>
   )
 }
