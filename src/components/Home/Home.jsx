@@ -48,7 +48,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative bg-white min-h-screen flex items-center justify-center">
+    <div className="no-scrollbar sticky-top-0 relative bg-white max-h-screen flex items-center justify-center">
       <div
         ref={sectionRef}
         style={{
