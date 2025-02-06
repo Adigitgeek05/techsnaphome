@@ -1,10 +1,34 @@
-import {react} from 'react'
+import {react,useState , useEffect} from 'react'
+import { gsap } from "gsap";
 
 export default function Header() {
+    const [scrolling, setScrolling] = useState(false);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 50) {
+          setScrolling(true);
+        } else {
+          setScrolling(false);
+        }
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+    useEffect(() => {
+        gsap.to(".navbar", {
+          backgroundColor: scrolling ? "rgba(0, 0, 0, 0.9)" : "transparent",
+          height: scrolling ? "60px" : "80px",
+          duration: 0.3,
+          ease: "power2.out",
+        });
+      }, [scrolling]);
+    
+  
     return (
       <header className="dark:bg-black px-6 py-4 flex items-center space-x-11 justify-between">
         <div className="flex items-center">
-          <img src="/src/assets/techsnaplogo.png" alt="Company logo" className="h-8" />
+          <img src="//public/techsnaplogo.png" alt="Company logo" className="h-8" />
         </div>
   
         <nav className="hidden md:flex items-center space-x-11">
@@ -38,6 +62,7 @@ export default function Header() {
   }
   
   
-  
+ 
+
   
   

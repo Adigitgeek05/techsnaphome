@@ -76,7 +76,7 @@ export default function Home() {
             Fast, responsive, and SEO-optimized web solutions for your business.
           </p>
           <div className="w-[800px] h-[300px] overflow-hidden flex justify-center items-center">
-          <img src="/src/assets//background.svg" alt="Background Image" />
+          <img src="//public/background.svg" alt="Background Image" />
           </div>
           
         </BackgroundLines>
