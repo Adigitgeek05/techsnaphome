@@ -2,7 +2,7 @@ import {react} from 'react'
 
 export default function Header() {
     return (
-      <header className="bg-zinc-900 px-6 py-4 flex items-center space-x-11 justify-between">
+      <header className="dark:bg-black px-6 py-4 flex items-center space-x-11 justify-between">
         <div className="flex items-center">
           <img src="/src/assets/techsnaplogo.png" alt="Company logo" className="h-8" />
         </div>
