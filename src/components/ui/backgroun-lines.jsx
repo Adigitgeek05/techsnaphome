@@ -15,7 +15,7 @@ export const BackgroundLines = ({
       ref={refernce}
       style={styles}
       className={cn(
-        " w-full bg-white dark:bg-black",
+        " w-full bg-white bg-black",
         className
       )}
     >

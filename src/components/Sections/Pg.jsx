@@ -34,13 +34,10 @@ export default function Pg() {
 
   return (
     <>
-      <div className="sticky top-0 h-screen grid place-items-center text-6xl text-center -z-10">
-        scroll down
-        <br />▾
-      </div>
+      
       <div
         ref={target}
-        className="h-[500vh] mx-auto bg-zinc-900 flow-root relative"
+        className="h-[500vh] mx-auto bg-yellow-500 flow-root relative"
       >
         <div className="sticky top-0 flow-root">
           <div className="absolute top-1/2 left-[5%] -translate-y-1/2 h-[60vh] flex flex-col items-center">
@@ -94,7 +91,7 @@ export default function Pg() {
           </div>
         </div>
       </div>
-      <div className="min-w-screen sticky top-0 h-screen grid place-items-center text-6xl text-center" />
+      <div className="min-w-screen sticky-top-0 h-screen grid place-items-center text-6xl text-center" />
     </>
   );
 }

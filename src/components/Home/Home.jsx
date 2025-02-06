@@ -57,7 +57,7 @@ export default function Home() {
           border: "300px solid white",
         }}
       >
-        <BackgroundLines className="w-full h-full bg-zinc-900 text-white flex flex-col items-center justify-center px-6 relative transition-all duration-500">
+        <BackgroundLines className="w-full h-full bg-black text-white flex flex-col items-center justify-center px-6 relative transition-all duration-500">
           <div className="absolute top-0 left-0 right-0 bg-zinc-800 w-full">
             <Header />
           </div>

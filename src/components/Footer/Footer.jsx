@@ -1,5 +1,5 @@
 import {react,useState} from 'react'
-
+import techsnaplogo from '/techsnaplogo.png'
 
 export default function Footer() {
     const [currentYear] = useState(2025);
@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="col-span-2 pr-8">
               <div className="flex items-center mb-6">
                 <img
-                  src="/src/assets/techsnaplogo.png"
+                  src={techsnaplogo}
                   alt="Techsnap Logo with text 'Snap the tech'"
                   className="h-12"
                 />
