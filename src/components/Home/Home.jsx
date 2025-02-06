@@ -9,10 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const sectionRef = useRef(null);
+  const cursorRef = useRef(null); // Cursor reference
 
-  const cursorRef = useRef(null);
   useEffect(() => {
-    gsap.set("#cursor", { scale: 1 });
+    gsap.set(cursorRef.current, { scale: 1 });
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -24,12 +24,13 @@ export default function Home() {
   }, []);
 
   const handleMouseEnter = () => {
-    gsap.to("#cursor", { scale: 8, duration: 0.3, ease: "power2.out" });
+    gsap.to(cursorRef.current, { scale: 8, duration: 0.3, ease: "power2.out" });
   };
 
   const handleMouseLeave = () => {
-    gsap.to("#cursor", { scale: 1, duration: 0.3, ease: "power2.out" });
+    gsap.to(cursorRef.current, { scale: 1, duration: 0.3, ease: "power2.out" });
   };
+
   useEffect(() => {
     gsap.to(sectionRef.current, {
       width: "100vw",
@@ -50,29 +51,34 @@ export default function Home() {
     <div className="relative bg-white min-h-screen flex items-center justify-center">
       <div
         ref={sectionRef}
-        
         style={{
           minHeight: "500px",
           minWidth: "1300px",
           border: "300px solid white",
         }}
       >
-        <BackgroundLines className=" w-full h-full bg-zinc-900 text-white flex flex-col items-center justify-center px-6 relative transition-all duration-500">
-        <div className="absolute top-0 left-0 right-0 bg-zinc-800 w-full">
-          <Header />
-        </div>
-        <Cursor />
+        <BackgroundLines className="w-full h-full bg-zinc-900 text-white flex flex-col items-center justify-center px-6 relative transition-all duration-500">
+          <div className="absolute top-0 left-0 right-0 bg-zinc-800 w-full">
+            <Header />
+          </div>
+          
+          {/* Pass cursorRef to Cursor Component */}
+          <Cursor ref={cursorRef} />
 
           <h1
-            className="text-4xl md:text-6xl font-extrabold"
+            className="text-4xl md:text-6xl font-extrabold py-0"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
             TECHSNAP
           </h1>
-          <p className="text-lg text-gray-400 mt-4">
+          <p className="text-lg text-gray-400 mt-4 py-10">
             Fast, responsive, and SEO-optimized web solutions for your business.
           </p>
+          <div className="w-[800px] h-[300px] overflow-hidden flex justify-center items-center">
+          <img src="/src/assets//background.svg" alt="Background Image" />
+          </div>
+          
         </BackgroundLines>
       </div>
 
