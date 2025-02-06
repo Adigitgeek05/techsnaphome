@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="col-span-2 pr-8">
               <div className="flex items-center mb-6">
                 <img
-                  src="https://ucarecdn.com/f59df733-e18a-49b6-9e14-0de8590d8e0f/-/format/auto/"
+                  src="/src/assets/techsnaplogo.png"
                   alt="Techsnap Logo with text 'Snap the tech'"
                   className="h-12"
                 />
