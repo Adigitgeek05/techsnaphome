@@ -7,20 +7,27 @@ import SideSlide from './components/Sections/SideSlide.jsx'
 import Timeline from './components/Sections/Timeline.tsx'
 import Footer from './components/Footer/Footer.jsx'
 import FooterUp from './components/Sections/FooterUp.jsx'
-
+import Navbar from './components/navbar/Navbar.jsx'
+import Section2 from './components/Sections/Section2.jsx'
 const App = () => {
   return (
-    <div>
+    <>
+      <div className=' relative rounded-b-[2.5em] '>
+       
+      <Navbar/>
       <Cursor />
       <Home />
       <Pg />
       <Timeline />
       <Section />
-      <SideSlide />
-      <FooterUp />
-      <Footer />
 
-    </div>
+      <SideSlide />
+      <Section2 />
+   
+      <Footer />
+      </div>
+
+    </>
   )
 }
 

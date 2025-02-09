@@ -5,6 +5,7 @@ import Cursor from "../Cursor/Cursor.jsx";
 import Header from "../Header/Header.jsx";
 import { BackgroundLines } from "../ui/backgroun-lines.jsx";
 import vitelogo from '/background.svg'
+import Navbar from "../navbar/Navbar.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
@@ -48,7 +49,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="no-scrollbar sticky-top-0 relative bg-white max-h-screen flex items-center justify-center">
+    <div className="no-scrollbar sticky-top max-h-screen flex items-center justify-center">
       <div
         ref={sectionRef}
         style={{
@@ -59,7 +60,7 @@ export default function Home() {
       >
         <BackgroundLines className="w-full h-full bg-black text-white flex flex-col items-center justify-center px-6 relative transition-all duration-500">
           <div className="absolute top-0 left-0 right-0 bg-zinc-800 w-full">
-            <Header />
+            
           </div>
           
           {/* Pass cursorRef to Cursor Component */}

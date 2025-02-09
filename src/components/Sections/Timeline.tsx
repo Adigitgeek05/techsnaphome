@@ -34,7 +34,7 @@ const Timeline: React.FC = () => {
   const movePoint = useTransform(smoothProgress, [0, 1], [0, pathLength])
 
   return (
-    <div ref={containerRef} className="bg-zinc-900  container mx-auto px-4 py-16 relative">
+    <div ref={containerRef} className="bg-red-400 container mx-auto px-4 py-40 relative">
       <h1 className="text-4xl text-white font-bold text-center mb-12">Our Journey</h1>
       <div className="relative min-h-[150vh]">
         <svg className="absolute top-0 left-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
