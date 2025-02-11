@@ -1,5 +1,5 @@
 import React from 'react'
-import Home from './components/Home/Home.jsx'
+import Home from './components/Home/Home.tsx'
 import Cursor from './components/Cursor/Cursor.jsx'
 import Section from './components/Sections/Section.tsx'
 import Pg from './components/Sections/Pg.jsx'
@@ -14,7 +14,7 @@ const App = () => {
     <>
       <div className='no-scrollbar relative rounded-b-[2.5em] '>
        
-      <Navbar/>
+     <Navbar />
       <Cursor />
       <Home />
       <Pg />
