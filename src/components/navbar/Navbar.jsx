@@ -83,7 +83,7 @@ const Pricing= [
           isScrolled ? "bg-white text-black shadow-lg" : "bg-transparent"
         } ${isScrolled ? "max-w-5xl" : "max-w-8xl"} transition-all duration-300 ease-in-out`}
       >
-        <div className="px-2 py-1 w-full flex items-center space-x-11 justify-between">
+        <div className="px-2 py-1 w-full flex items-center space-x-2 justify-between">
           {/* Logo */}
           <div className="w-[200px] ">
           <img src={techsnaplo} alt="Logo" className="h-10" />

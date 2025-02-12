@@ -10,6 +10,8 @@ import FooterUp from './components/Sections/FooterUp.jsx'
 import Navbar from './components/navbar/Navbar.jsx'
 import Section2 from './components/Sections/Section2.jsx'
 import Section3 from './components/Sections/Section3.jsx'
+import Test from './components/test.tsx'
+import { GoogleGeminiEffectDemo } from './components/Sections/TestTimeline.jsx'
 const App = () => {
   return (
     <>
@@ -19,8 +21,8 @@ const App = () => {
       <Cursor />
       <Home />
       <Section3 />
+      <GoogleGeminiEffectDemo />
       
-      <Timeline />
       <Pg />
       <Section />
 
