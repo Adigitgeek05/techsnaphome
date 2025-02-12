@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import techsnaplo from "/techsnaplogo.png";
-
+import { AiOutlineArrowDown } from "react-icons/ai";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isActiveDropdown, setIsActiveDropdown] = useState(null);
@@ -66,7 +66,7 @@ const Pricing= [
   ]
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 90);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -75,8 +75,8 @@ const Pricing= [
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out 
-      ${isScrolled ? "px-2 py-1" : "px-8 py-4"}`}
+      className={`fixed top-0 left-0 right-0 z-50 mt-6 transition-all duration-300 ease-in-out 
+      ${isScrolled ? "px-1 py-1" : "px-8 py-4"}`}
     >
       <div
         className={`mx-auto rounded-full ${
@@ -89,16 +89,18 @@ const Pricing= [
           <img src={techsnaplo} alt="Logo" className="h-10" />
           </div>
           {/* Navigation Links */}
-          <div className="space-x-11 flex px-6 py-2 pl-10 rounded-full bg-white text-black transition-all duration-300">
+          <div className="space-x-4 flex px-6 py-2 pl-10 rounded-full bg-white text-black transition-all duration-300">
             {/* Product Dropdown */}
-            <div className="relative group">
+            <div className=" flex relative group">
               <button
-                className="px-2 py-1 font-medium text-black hover:text-[#ff69b4]"
+                className=" flex items-center px-4 py-2 group rounded-full font-medium text-black hover:bg-[#ff69b4]"
                 onMouseEnter={() => setIsActiveDropdown("product")}
                 onMouseLeave={() => setIsActiveDropdown(null)}
               >
                 Product
+                <AiOutlineArrowDown className="group-hover:rotate-180 transition-transform duration-300 " />
               </button>
+            
 
               {isActiveDropdown === "product" && (
                 <div className="h-[400px] absolute top-full left-0 mt-4 w-[900px] bg-white rounded-2xl p-6 grid grid-cols-4 gap-10">
@@ -156,11 +158,12 @@ const Pricing= [
             {/* Community Dropdown */}
             <div className="relative group">
               <button
-                className="px-2 py-1 font-medium text-black hover:text-[#ff69b4]"
+                className=" flex items-center px-4 py-2 rounded-full font-medium text-black hover:bg-[#ff69b4]"
                 onMouseEnter={() => setIsActiveDropdown("community")}
                 onMouseLeave={() => setIsActiveDropdown(null)}
               >
                 Community
+                <AiOutlineArrowDown className="group-hover:rotate-180 transition-transform duration-300 " />
               </button>
 
               {isActiveDropdown === "community" && (
@@ -178,22 +181,24 @@ const Pricing= [
 
             <div className="relative group">
               <button
-                className="px-2 py-1 font-medium text-black hover:text-[#ff69b4]"
+                className="flex items-center px-4 py-2 rounded-full font-medium text-black hover:bg-[#ff69b4]"
                 onMouseEnter={() => setIsActiveDropdown("community")}
                 onMouseLeave={() => setIsActiveDropdown(null)}
               >
                 CarrerPaths 
+                <AiOutlineArrowDown className="group-hover:rotate-180 transition-transform duration-300 " />
               </button>
             </div>
             <div className="relative group">
               <button
-                className="px-2 py-1 font-medium text-black hover:text-[#ff69b4]"
+                className="flex items-center px-4 py-2 rounded-full font-medium text-black hover:bg-[#ff69b4]"
                 onMouseEnter={() => setIsActiveDropdown("resources")}
                 onMouseLeave={() => setIsActiveDropdown(null)}
               >
                 Resources
+                <AiOutlineArrowDown className="group-hover:rotate-180 transition-transform duration-300 " />
               </button>
-              <i className="fa-regular fa-arrow-left-from-arc"></i>
+              
 
 
               {isActiveDropdown === "resources" && (
@@ -210,11 +215,12 @@ const Pricing= [
             </div>
             <div className="relative group">
               <button
-                className="px-2 py-1 font-medium text-black hover:text-[#ff69b4]"
+                className="flex items-center px-4 py-2 rounded-full font-medium text-black hover:bg-[#ff69b4]"
                 onMouseEnter={() => setIsActiveDropdown("pricing")}
                 onMouseLeave={() => setIsActiveDropdown(null)}
               >
                 Pricing
+                <AiOutlineArrowDown className="group-hover:rotate-180 transition-transform duration-300 " />
               </button>
 
               {isActiveDropdown === "pricing" && (
@@ -233,9 +239,9 @@ const Pricing= [
           </div>
 
           {/* Login & Register Buttons */}
-          <div className="w-[200px] flex space-x-6">
+          <div className="w-[200px] flex space-x-6 pr-6">
             <button className="px-4 py-2 bg-gray-200 rounded-full">Login</button>
-            <button className="px-4 py-2 bg-[#ff69b4] text-white rounded-full">Register</button>
+            <button className="px-4 py-2 bg-[#ff69b4] text-white rounded-full ">Register</button>
           </div>
         </div>
       </div>

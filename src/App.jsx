@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer.jsx'
 import FooterUp from './components/Sections/FooterUp.jsx'
 import Navbar from './components/navbar/Navbar.jsx'
 import Section2 from './components/Sections/Section2.jsx'
+import Section3 from './components/Sections/Section3.jsx'
 const App = () => {
   return (
     <>
@@ -17,8 +18,10 @@ const App = () => {
      <Navbar />
       <Cursor />
       <Home />
-      <Pg />
+      <Section3 />
+      
       <Timeline />
+      <Pg />
       <Section />
 
       <SideSlide />
