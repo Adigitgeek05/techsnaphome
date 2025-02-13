@@ -9,13 +9,12 @@ import Footer from './components/Footer/Footer.jsx'
 import FooterUp from './components/Sections/FooterUp.jsx'
 import Navbar from './components/navbar/Navbar.jsx'
 import Section2 from './components/Sections/Section2.jsx'
-import Section3 from './components/Major/Section3.jsx'
+
 import Test from './components/test.tsx'
 import { GoogleGeminiEffectDemo } from './components/Sections/TestTimeline.jsx'
 import AppRoutes from "./AppRoutes.jsx";
 
 
-import Second from "./components/Major/Second.jsx";
 
 
     
@@ -25,16 +24,17 @@ import Second from "./components/Major/Second.jsx";
 const App = () => {
   return (
     <>
-      <div className='no-scrollbar relative rounded-b-[2.5em] '>
+      <div className='no-scrollbar overflow-x-clip relative rounded-b-[2.5em] '>
        
      <Navbar />
       <Cursor />
       <Home />
       
       <AppRoutes />
+      
       <GoogleGeminiEffectDemo />
       <Pg />
-      <Section />
+    
 
       <SideSlide />
       <Section2 />

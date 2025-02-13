@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import techsnaplo from "/techsnaplogo.png";
+import techsnaplo from "/hh.png";
+import tech from "/techsnaplo.jpg"
 import { AiOutlineArrowDown } from "react-icons/ai";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -75,8 +76,8 @@ const Pricing= [
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 mt-6 transition-all duration-300 ease-in-out 
-      ${isScrolled ? "px-1 py-1" : "px-8 py-4"}`}
+      className={`fixed top-0 left-0 right-0 z-50 mt-4 transition-all duration-300 ease-in-out 
+      ${isScrolled ? "px-2 py-1" : "px-8 py-4"}`}
     >
       <div
         className={`mx-auto rounded-full ${
@@ -86,7 +87,7 @@ const Pricing= [
         <div className="px-2 py-1 w-full flex items-center space-x-2 justify-between">
           {/* Logo */}
           <div className="w-[200px] ">
-          <img src={techsnaplo} alt="Logo" className="h-10" />
+          <img src={isScrolled ? tech : techsnaplo} alt="Logo" className={`${isScrolled ? 'h-10' : 'h-16'}  pb-2 transition-all duration-300`}  />
           </div>
           {/* Navigation Links */}
           <div className="space-x-4 flex px-6 py-2 pl-10 rounded-full bg-white text-black transition-all duration-300">
@@ -95,7 +96,7 @@ const Pricing= [
               <button
                 className=" flex items-center px-4 py-2 group rounded-full font-medium text-black hover:bg-[#ff69b4]"
                 onMouseEnter={() => setIsActiveDropdown("product")}
-                onMouseLeave={() => setIsActiveDropdown(null)}
+             
               >
                 Product
                 <AiOutlineArrowDown className="group-hover:rotate-180 transition-transform duration-300 " />
@@ -103,7 +104,8 @@ const Pricing= [
             
 
               {isActiveDropdown === "product" && (
-                <div className="h-[400px] absolute top-full left-0 mt-4 w-[900px] bg-white rounded-2xl p-6 grid grid-cols-4 gap-10">
+                <div className="h-[400px] absolute top-full left-0 mt-4 w-[900px] bg-white rounded-2xl p-6 grid grid-cols-4 gap-10"
+                onMouseLeave={() => setIsActiveDropdown(null)}>
                   {/* Developer Careers */}
                   <div>
                     <h3 className="text-black font-medium mb-4">Developer Careers</h3>
@@ -160,14 +162,15 @@ const Pricing= [
               <button
                 className=" flex items-center px-4 py-2 rounded-full font-medium text-black hover:bg-[#ff69b4]"
                 onMouseEnter={() => setIsActiveDropdown("community")}
-                onMouseLeave={() => setIsActiveDropdown(null)}
+                
               >
                 Community
                 <AiOutlineArrowDown className="group-hover:rotate-180 transition-transform duration-300 " />
               </button>
 
               {isActiveDropdown === "community" && (
-                <div className="absolute top-full left-0 mt-4 w-[200px] bg-white rounded-2xl p-4">
+                <div className="absolute top-full left-0 mt-4 w-[200px] bg-white rounded-2xl p-4"
+                onMouseLeave={() => setIsActiveDropdown(null)}>
                   <div className="space-y-3">
                     {Community.map((item, index) => (
                       <div key={index} className="flex items-center space-x-2 text-black hover:text-[#ff69b4] transition-colors">
@@ -182,8 +185,8 @@ const Pricing= [
             <div className="relative group">
               <button
                 className="flex items-center px-4 py-2 rounded-full font-medium text-black hover:bg-[#ff69b4]"
-                onMouseEnter={() => setIsActiveDropdown("community")}
-                onMouseLeave={() => setIsActiveDropdown(null)}
+                
+               
               >
                 CarrerPaths 
                 <AiOutlineArrowDown className="group-hover:rotate-180 transition-transform duration-300 " />
@@ -193,7 +196,7 @@ const Pricing= [
               <button
                 className="flex items-center px-4 py-2 rounded-full font-medium text-black hover:bg-[#ff69b4]"
                 onMouseEnter={() => setIsActiveDropdown("resources")}
-                onMouseLeave={() => setIsActiveDropdown(null)}
+               
               >
                 Resources
                 <AiOutlineArrowDown className="group-hover:rotate-180 transition-transform duration-300 " />
@@ -202,7 +205,8 @@ const Pricing= [
 
 
               {isActiveDropdown === "resources" && (
-                <div className="absolute top-full left-0 mt-4 w-[200px] bg-white rounded-2xl p-4">
+                <div className="absolute top-full left-0 mt-4 w-[200px] bg-white rounded-2xl p-4"
+                onMouseLeave={() => setIsActiveDropdown(null)}>
                   <div className="space-y-3">
                     {Resources.map((item, index) => (
                       <div key={index} className="flex items-center space-x-2 text-black hover:text-[#ff69b4] transition-colors">
@@ -217,17 +221,19 @@ const Pricing= [
               <button
                 className="flex items-center px-4 py-2 rounded-full font-medium text-black hover:bg-[#ff69b4]"
                 onMouseEnter={() => setIsActiveDropdown("pricing")}
-                onMouseLeave={() => setIsActiveDropdown(null)}
+                
               >
                 Pricing
                 <AiOutlineArrowDown className="group-hover:rotate-180 transition-transform duration-300 " />
               </button>
 
               {isActiveDropdown === "pricing" && (
-                <div className="absolute top-full left-0 mt-4 w-[200px] bg-white rounded-2xl p-4">
+                <div className="absolute top-full left-0 mt-4 w-[200px] bg-white rounded-2xl p-4" 
+                onMouseLeave={() => setIsActiveDropdown(null)}>
                   <div className="space-y-3">
                     {Pricing.map((item, index) => (
                       <div key={index} className="flex items-center space-x-2 text-black hover:text-[#ff69b4] transition-colors">
+                        
                         <span>{item.label}</span>
                       </div>
                     ))}
@@ -239,7 +245,7 @@ const Pricing= [
           </div>
 
           {/* Login & Register Buttons */}
-          <div className="w-[200px] flex space-x-6 pr-6">
+          <div className="w-[200px] flex space-x-6 pb-2 pr-6">
             <button className="px-4 py-2 bg-gray-200 rounded-full">Login</button>
             <button className="px-4 py-2 bg-[#ff69b4] text-white rounded-full ">Register</button>
           </div>

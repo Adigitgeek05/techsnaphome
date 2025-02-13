@@ -3,7 +3,7 @@ import techsnaplogo from '/techsnaplogo.png'
 export default function Footer() {
   
     return (
-      <footer className="bg-[#1a2b3c] w-[100vw] fixed  pt-32 -z-10 bottom-0 text-white py-13 px-4 md:px-8">
+      <footer className="bg-[#1a2b3c] w-[100vw] fixed  pt-60 -z-10 bottom-0 text-white py-13 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
             <div className="col-span-2 pr-8">

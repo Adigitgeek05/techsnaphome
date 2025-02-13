@@ -23,11 +23,10 @@ export default function Section3() {
   return (
    
 
-    <div className="min-h-screen bg-orange-100 p-10 overflow-hidden relative ">
-             <div
-  className="absolute inset-0 h-full w-full bg-[radial-gradient(#121212_1px,transparent_1px)] [background-size:16px_16px]">
+    <div className="min-h-screen bg-white p-10 overflow-hidden relative ">
+             
 
-      <div className="max-w-5xl mx-auto p-8 z-[999] bg-orange-100 mt-8">
+      <div className="max-w-5xl mx-auto p-8 z-[999] bg-white mt-8">
         <h1 className="text-center text-4xl font-bold mb-4 font-roboto">
           Find what's right for you
         </h1>
@@ -88,7 +87,6 @@ export default function Section3() {
       {/* <DotPattern /> */}
   </div>
 
-       
-    </div>
+   
   );
 }

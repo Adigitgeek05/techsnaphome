@@ -1,7 +1,7 @@
 import { useState } from "react";
 import purpose from "/purpose.svg";
 import { useNavigate } from "react-router-dom";
-export default function Second() {
+export default function Third() {
     const [selectedOption, setSelectedOption] = useState(null);
     const navigate = useNavigate();
     const options = [
@@ -11,11 +11,10 @@ export default function Second() {
       ];
   
     return (
-      <div className="min-h-screen bg-orange-100 p-10 overflow-hidden relative ">
-             <div
-  className="absolute inset-0 h-full w-full bg-[radial-gradient(#121212_1px,transparent_1px)] [background-size:16px_16px]">
+      <div className="min-h-screen bg-white p-10 overflow-hidden relative ">
+             
 
-      <div className="max-w-5xl mx-auto p-6 z-[999] bg-orange-100 mt-22  mb-4">
+      <div className="max-w-6xl mx-auto p-6 z-[999] bg-white mt-22  mb-4">
             <h1 className="text-center text-3xl md:text-4xl font-crimson-text font-bold text-gray-800 mb-4">
               Find what's right for you
             </h1>
@@ -46,20 +45,23 @@ export default function Second() {
                 What do you want to achieve?
               </h2>
               <div className="flex flex-col gap-4">
-                {options.map((option) => (
-                  <button
-                    key={option.title}
-                    onClick={() => setSelectedOption(option.title)}
-                    className={`p-4 text-left rounded-lg bg-white transition-all ${
-                      selectedOption === option.title ? "border-blue-500 bg-blue-50" : "border-gray-200"
-                    }`}
-                  >
-                    <span className="font-bold">{option.title}</span>
-                    <br />
-                    <span className="text-gray-600 text-sm">{option.description}</span>
-                  </button>
-                ))}
-              </div>
+                  {options.map((option) => (
+                    <button
+                      key={option.title}
+                      onClick={() => {
+                        setSelectedOption(option.title);
+                         
+                      }}
+                      className={`p-4 text-left rounded-lg border  bg-white transition-all ${
+                        selectedOption === option.title ? "border-blue-500 bg-blue-50" : "border-gray-200"
+                      }`}
+                    >
+                      <span className="font-bold">{option.title}</span>
+                      <br />
+                      <span className="text-gray-600 text-sm">{option.description}</span>
+                    </button>
+                  ))}
+                </div>
               <div className="mt-6">
                 <button
                   onClick={() => navigate("/second")}
@@ -83,7 +85,7 @@ export default function Second() {
          
         </div>
       </div>
-      </div>
+     
     );
   }
   

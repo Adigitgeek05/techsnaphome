@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <>
       <div className="bg-white min-w-screen min-h-screen ">
-        <div className="flex flex-col mt-8 items-center">
+        <div className="flex flex-col mt-4 items-center">
           <div className="w-[90%] flex h-20   justify-center ">
             <div className="bg-black w-[20%]">
               <div className="bg-white w-full h-20 rounded-br-4xl" />
@@ -37,16 +37,15 @@ export default function Home() {
           </div>
           <div className="bg-black text-white flex flex-col items-center justify-center p-10 w-[95%] h-[95vh] border-4 border-t-0  rounded-b-lg rounded-t-4xl relative m-auto">
             <Cursor ref={cursorRef} />
-            <h1
-              className="text-4xl md:text-6xl font-extrabold py-0"
+            <h3
+              className="text-2xl md:text-3xl font-bold py-0"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              TECHSNAP
-            </h1>
-            <p className="text-lg text-gray-400 mt-4 py-10">
-              Fast, responsive, and SEO-optimized web solutions for your
-              business.
+               Choose your career and start your project now !
+            </h3>
+            <p className="text-lg text-gray-400 mt-4 py-6">
+             
             </p>
             <div className="w-[800px] h-[300px] overflow-hidden flex justify-center items-center">
               <img src={vitelogo} alt="Background Image" />
