@@ -87,10 +87,10 @@ const Pricing= [
         <div className="px-2 py-1 w-full flex items-center space-x-2 justify-between">
           {/* Logo */}
           <div className="w-[200px] ">
-          <img src={isScrolled ? tech : techsnaplo} alt="Logo" className={`${isScrolled ? 'h-10' : 'h-16'}  pb-2 transition-all duration-300`}  />
+          <img src={isScrolled ? tech : techsnaplo} alt="Logo" className={`${isScrolled ? 'h-10' : 'h-16'}  pb-1 pl-2 transition-all duration-300`}  />
           </div>
           {/* Navigation Links */}
-          <div className="space-x-4 flex px-6 py-2 pl-10 rounded-full bg-white text-black transition-all duration-300">
+          <div className="pb-3 space-x-4 flex px-6  py-2 pl-10 rounded-full bg-white text-black transition-all duration-300">
             {/* Product Dropdown */}
             <div className=" flex relative group">
               <button
@@ -245,7 +245,7 @@ const Pricing= [
           </div>
 
           {/* Login & Register Buttons */}
-          <div className="w-[200px] flex space-x-6 pb-2 pr-6">
+          <div className="w-[200px] flex space-x-6 pb-1 pr-6">
             <button className="px-4 py-2 bg-gray-200 rounded-full">Login</button>
             <button className="px-4 py-2 bg-[#ff69b4] text-white rounded-full ">Register</button>
           </div>
