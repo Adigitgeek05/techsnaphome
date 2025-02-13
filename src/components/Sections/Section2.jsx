@@ -18,11 +18,11 @@ const Section2 = () => {
   return (
     <div
       ref={sectionRef}
-      className="relative -top-27 bg-orange-500 mb-[13em] flex  justify-center item-center rounded-bl-[2.0em] rounded-br-[2.0em] min-h-screen text-4xl text-white  flex-col font-extrabold   z-[4]  items-center transition-all duration-500"
+      className="relative -top-27 bg-white mb-[13em] flex  justify-center item-center rounded-bl-[2.0em] rounded-br-[2.0em] min-h-screen text-4xl text-black flex-col font-extrabold   z-[4]  items-center transition-all duration-500"
       >
       Section
      
-      <div className="flex w-[90%] bg-white text-black justify-center items-center h-80 rounded-4xl absolute -bottom-[10%]"> <h1>Techsnap</h1>  </div>
+      <div className="flex w-[90%] bg-gradient-to-r from-purple-300 to-purple-500 text-black justify-center items-center h-80 rounded-4xl absolute -bottom-[10%]"> <h1>Techsnap</h1>  </div>
     </div>
    
   );
