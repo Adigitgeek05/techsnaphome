@@ -74,7 +74,7 @@ export default function Section3() {
                   ))}
                 </div>
               <div className="flex flex-col">
-                <img src={career} alt="" className="w-52 h-60" />
+                <img src={career} alt="" className="w-52 h-45" />
                 <div className="text-gray-600 mt-2">
                   <p className="font-roboto">
                     We have hundreds of courses that cover just about everything.
