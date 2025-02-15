@@ -24,14 +24,14 @@ export const GoogleGeminiEffect = ({
   return (
     (<div className={cn("sticky top-64", className)}>
        <motion.p
-        className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300"
+        className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text  text-black"
         style={{ opacity: titleOpacity }}
         transition={transition}
       >
         {titles}
       </motion.p>
       <p
-        className="text-xs md:text-xl font-normal text-center text-neutral-400 mt-4 max-w-lg mx-auto">
+        className="text-xs md:text-xl font-normal text-center text-black mt-4 max-w-lg mx-auto">
         {description ||
           `Scroll this component and see our path!`}
       </p>

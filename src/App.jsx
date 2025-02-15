@@ -13,6 +13,7 @@ import Section2 from './components/Sections/Section2.jsx'
 import Test from './components/test.tsx'
 import { GoogleGeminiEffectDemo } from './components/Sections/TestTimeline.jsx'
 import AppRoutes from "./AppRoutes.jsx";
+import { AppleCardsCarouselDemo } from './components/ui/applecorousal.tsx'
 
 
 
@@ -31,7 +32,7 @@ const App = () => {
       <Home />
       
       <AppRoutes />
-      
+      <AppleCardsCarouselDemo />
       <GoogleGeminiEffectDemo />
       <Pg />
     

@@ -15,6 +15,7 @@ const SideSlide = () => {
   const slider = useRef();
 
   useLayoutEffect(() => {
+
     let ctx = gsap.context(() => {
       let panels = gsap.utils.toArray(".panel");
       gsap.to(slider.current, {
@@ -35,10 +36,10 @@ const SideSlide = () => {
   return (
     <div className=" no-scrollbar relative bottom-20   min-h-screen overflow overflow-x-scroll" ref={component}>
       <div ref={slider} className="sticky-top-0 flex w-[400vw]">
-        <div className="sticky-top-0 z-0 panel w-screen h-screen bg-white  flex justify-center items-center text-white text-4xl">
+        <div className="sticky-top-0 z-0 panel w-screen h-screen bg-gradient-to-b from-blue-100 to-orange-100 flex justify-center items-center text-black text-4xl">
           Course 1
         </div>
-        <div className="sticky-top-0 z-2 panel w-screen h-screen bg-zinc-800 flex justify-center items-center text-white text-4xl">
+        <div className="sticky-top-0 z-2 panel w-screen h-screen bg-gradient-to-b from-blue-50 to-orange-50 flex justify-center items-center text-black text-4xl">
           Course 2
         </div>
         <div className="sticky-top-0 z-4 panel w-screen h-screen bg-zinc-800 flex justify-center items-center text-white text-4xl">

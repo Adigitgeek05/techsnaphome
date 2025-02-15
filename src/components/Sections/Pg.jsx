@@ -37,7 +37,7 @@ export default function Pg() {
       
       <div
         ref={target}
-        className=" h-[600vh] mx-auto py-10 bg-yellow-500 flow-root relative"
+        className=" h-[600vh] mx-auto py-10 bg-gradient-to-b from-orange-50 to-blue-50 flow-root relative"
       >
         <div className="sticky top-0 flow-root">
           <div className="absolute top-1/2 left-[5%] -translate-y-1/2 h-[60vh] flex flex-col items-center">
@@ -62,7 +62,7 @@ export default function Pg() {
             </div>
           </div>
           <div className="h-[100vh] relative flex justify-center items-center pl-[10%]">
-            <h1 className="top-[10%] absolute text-2xl md:text-4xl text-white font-bold text-center w-[20ch]">
+            <h1 className="top-[10%] absolute text-2xl md:text-4xl text-black font-bold text-center w-[20ch]">
               You probably haven't heard of them tattooed glossier leggings
             </h1>
             {[...Array(CARD_COUNT).keys()].map((_, idx, arr) => (
