@@ -18,7 +18,7 @@ const Section2 = () => {
   return (
     <div
       ref={sectionRef}
-      className="relative -top-27 bg-white mb-[13em] flex  justify-center item-center rounded-bl-[2.0em] rounded-br-[2.0em] min-h-screen text-4xl text-black flex-col font-extrabold   z-[4]  items-center transition-all duration-500"
+      className="relative -top-44 bg-white mb-[15em] flex  justify-center item-center rounded-bl-[2.0em] rounded-br-[2.0em] min-h-screen text-4xl text-black flex-col font-extrabold   z-[4]  items-center transition-all duration-500"
       >
       Section
      

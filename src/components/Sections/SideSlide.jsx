@@ -35,7 +35,7 @@ const SideSlide = () => {
   return (
     <div className=" no-scrollbar relative bottom-20   min-h-screen overflow overflow-x-scroll" ref={component}>
       <div ref={slider} className="sticky-top-0 flex w-[400vw]">
-        <div className="sticky-top-0 z-0 panel w-screen h-screen bg-zinc-800 flex justify-center items-center text-white text-4xl">
+        <div className="sticky-top-0 z-0 panel w-screen h-screen bg-white  flex justify-center items-center text-white text-4xl">
           Course 1
         </div>
         <div className="sticky-top-0 z-2 panel w-screen h-screen bg-zinc-800 flex justify-center items-center text-white text-4xl">
