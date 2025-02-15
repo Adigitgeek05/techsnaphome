@@ -37,7 +37,7 @@ export default function Pg() {
       
       <div
         ref={target}
-        className=" h-[600vh] mx-auto py-10 bg-gradient-to-b from-orange-50 to-blue-50 flow-root relative"
+        className=" h-[600vh] mx-auto py-10 bg-orange-50 flow-root relative"
       >
         <div className="sticky top-0 flow-root">
           <div className="absolute top-1/2 left-[5%] -translate-y-1/2 h-[60vh] flex flex-col items-center">
